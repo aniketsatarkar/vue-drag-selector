@@ -1,6 +1,5 @@
 <template>
     <div @mousedown.stop
-         @click.stop="handleClick"
          :class="['drag-selector-item-wrapper', selected ? 'selected':'']">
         <slot></slot>
     </div>
@@ -35,10 +34,6 @@ export default {
     },
 
     methods: {
-        handleClick() {
-            this.handleSelectChange(true);
-        },
-
         handleSelectChange(val) {
             if (this.selected === val) return;
             this.selected = val;

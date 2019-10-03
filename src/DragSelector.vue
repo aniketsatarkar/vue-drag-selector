@@ -10,12 +10,15 @@ import emitter from './mixins/emitter';
 import { throttle } from './utils/utils';
 
 /**
-   * 需求：框选子项
-   * 组件：框选区，框选子项
-   * 实现方法：鼠标在框选区长按拖动时计算拖动坐标，如果框选进入范围，改变为选中状态，单击任意地方取消选中
-   * 1. 开始拖动前计算各个子项的坐标
-   * 2. 拖动过程中进行判断，如果进入被框选范围，触发该子项修改状态
-   */
+ * Demand: box selection of children
+ * Component: box selection, box selection
+ * Implementation method: The mouse calculates the drag coordinate when 
+ * the mouse is dragged in the frame selection area. If the frame is selected 
+ * to enter the range, change to the selected state, click anywhere to uncheck
+ * 1. Calculate the coordinates of each child before starting to drag
+ * 2. Determine during dragging, if it enters the selected range, 
+ * trigger the modified state of the sub-item
+ */
 const POINT_MODEL = ['offsetX', 'offsetY', 'clientX', 'clientY'];
 
 export default {
@@ -250,10 +253,9 @@ export default {
         width: 100%;
         height: 100%;
         position: relative;
-        cursor: crosshair;
+        cursor: default;
         user-select: none;
     }
-
     .drag-area-box {
         pointer-events: none;
     }
